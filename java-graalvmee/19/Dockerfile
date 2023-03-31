@@ -12,9 +12,8 @@ RUN         microdnf update -y \
             && adduser --home-dir /home/container container \
             && cd /usr/lib/jvm \
             && if [[ $(uname -m) = aarch64 ]]; then arch=aarch64; else arch=amd64; fi \
-            && cat graalvm-ee-java19-22.3.1-${arch}.z* >graalvm-ee-java19-22.3.1-${arch}-broken.zip \
-            && zip -FF graalvm-ee-java19-22.3.1-${arch}-broken.zip --out graalvm-ee-java19-22.3.1-${arch}-fixed.zip \
-            && unzip -o graalvm-ee-java19-22.3.1-${arch}-fixed.zip \
+            && zip -FF graalvm-ee-java19-22.3.1-${arch}.zip --out graalvm-ee-java19-22.3.1-${arch}-full.zip \
+            && unzip -o graalvm-ee-java19-22.3.1-${arch}-full.zip \
             && rm -f graalvm-ee-java19-22.3.1.*
 
 

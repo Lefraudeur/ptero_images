@@ -7,3 +7,6 @@
   - More leightwieght images
   - Optimized java arguments
   - GRAAL VM Enterprise Edition java8, 11 and 17
+  - ##### Special Hosting :
+    - Minecraft server.jar downloader
+    - Server.jar check (anti-pterovm)

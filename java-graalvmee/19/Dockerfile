@@ -14,7 +14,7 @@ RUN         microdnf update -y \
             && if [[ $(uname -m) = aarch64 ]]; then arch=aarch64; else arch=amd64; fi \
             && zip -FF graalvm-ee-java19-22.3.1-${arch}.zip --out graalvm-ee-java19-22.3.1-${arch}-full.zip \
             && unzip -o graalvm-ee-java19-22.3.1-${arch}-full.zip \
-            && rm -f graalvm-ee-java19-22.3.1.* \
+            && rm -f graalvm-ee-java19-22.3.1* \
             && chown -R container /usr/lib/jvm/graalvm-ee-java19-22.3.1/* \
             && chmod -R 077 /usr/lib/jvm/graalvm-ee-java19-22.3.1/*
 

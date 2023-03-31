@@ -16,7 +16,7 @@ RUN         microdnf update -y \
             && unzip -o graalvm-ee-java19-22.3.1-${arch}-full.zip \
             && rm -f graalvm-ee-java19-22.3.1.* \
             && chown -R container /usr/lib/jvm/graalvm-ee-java19-22.3.1/* \
-            && chmod -R 077 /usr/lib/jvm/graalvm-ee-java19-22.3.1/* \
+            && chmod -R 077 /usr/lib/jvm/graalvm-ee-java19-22.3.1/*
 
 
 ENV         PATH=/usr/lib/jvm/graalvm-ee-java19-22.3.1/bin:$PATH

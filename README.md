@@ -9,3 +9,5 @@
   - GRAAL VM Enterprise Edition java8, 11 and 17
   - Minecraft server.jar downloader
   - Server.jar check (anti-pterovm)
+- Alternative: `lefraudeur/ptero_images:java19_graalvmee`
+- ipv6: `registry.ipv6.docker.com/lefraudeur/ptero_images:java19_graalvmee`

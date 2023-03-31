@@ -3,7 +3,7 @@ cd /home/container || (exit 1 && echo "Unable to change to /home/container. Some
 
 # Configure colors
 CYAN='\033[0;36m'
-YELLOW='\033[0;33m'
+YELLOW='\033[33m'
 BLUE='\033[0;34m'
 RESET_COLOR='\033[0m'
 

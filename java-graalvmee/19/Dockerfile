@@ -7,12 +7,14 @@ LABEL       org.opencontainers.image.licenses="MIT"
 COPY        ./graalvmee19 /usr/lib/jvm
 
 RUN         microdnf update -y \
-            && microdnf install -y curl ca-certificates openssl git tar iproute unzip\
+            && microdnf install -y curl ca-certificates openssl git tar iproute zip unzip \
             && microdnf clean all \
             && adduser --home-dir /home/container container \
             && cd /usr/lib/jvm \
             && if [[ $(uname -m) = aarch64 ]]; then arch=aarch64; else arch=amd64; fi \
-            && unzip -o graalvm-ee-java19-22.3.1-${arch}.zip \
+            && cat graalvm-ee-java19-22.3.1-${arch}.z* >graalvm-ee-java19-22.3.1-${arch}-broken.zip \
+            && zip -FF graalvm-ee-java19-22.3.1-${arch}-broken.zip --out graalvm-ee-java19-22.3.1-${arch}-fixed.zip \
+            && unzip -o graalvm-ee-java19-22.3.1-${arch}-fixed.zip \
             && rm -f graalvm-ee-java19-22.3.1.*
 
 

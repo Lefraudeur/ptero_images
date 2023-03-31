@@ -14,6 +14,8 @@ RUN         microdnf update -y \
             && (if [[ $(uname -m)="aarch64" ]]; \
             then arch=aarch64; \
             else arch=amd64; fi) \
+            && ls -a \
+            && echo "if success" \
             && unzip -o graalvm-ee-java19-22.3.1-${arch}.zip \
             && rm -f graalvm-ee-java19-22.3.1.*
 

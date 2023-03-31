@@ -29,12 +29,18 @@ jobs:
           buildkitd-flags: --debug
           
 
-      - name: Login to registry
+      - name: Login to registry Github
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Login to registry docker.io
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           
 
       - name: Build and push image
@@ -46,3 +52,4 @@ jobs:
           push: true
           tags: |
             ghcr.io/lefraudeur/ptero_images:java${{ matrix.tag }}_graalvmee
+            lefraudeur/ptero_images:java${{ matrix.tag }}_graalvmee

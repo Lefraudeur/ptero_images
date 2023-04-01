@@ -13,7 +13,7 @@ RUN         microdnf install -y zip unzip \
             && zip -FF graalvm-ee-java19-22.3.1-${arch}.zip --out graalvm-ee-java19-22.3.1-${arch}-full.zip \
             && unzip -o graalvm-ee-java19-22.3.1-${arch}-full.zip \
             && rm -f graalvm-ee-java19-22.3.1-* \
-            && chmod -R 005 /usr/lib/jvm/graalvm-ee-java19-22.3.1/*
+            && chmod -R 775 /usr/lib/jvm/graalvm-ee-java19-22.3.1/*
             
             
 FROM        oraclelinux:9-slim as main

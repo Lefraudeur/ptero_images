@@ -15,6 +15,7 @@ jobs:
       matrix:
         tag:
           - 19
+          - 17
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

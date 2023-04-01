@@ -12,6 +12,7 @@ jobs:
     name: "java${{ matrix.tag }}_graalvmee"
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         tag:
           - 19

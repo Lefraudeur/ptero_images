@@ -1,4 +1,4 @@
-FROM        oraclelinux:9-slim
+FROM        oraclelinux:9-slim as build
 
 LABEL       author="Lefraudeur" maintainer="karlbouisseren@gmail.com"
 LABEL       org.opencontainers.image.source="https://github.com/Lefraudeur/ptero_images"
@@ -6,18 +6,24 @@ LABEL       org.opencontainers.image.licenses="MIT"
 
 COPY        ./graalvmee19 /usr/lib/jvm
 
-RUN         microdnf update -y \
-            && microdnf install -y curl ca-certificates openssl tar iproute zip unzip wget \
+RUN         microdnf install -y zip unzip \
             && microdnf clean all \
-            && adduser --home-dir /home/container container \
             && cd /usr/lib/jvm \
             && if [[ $(uname -m) = aarch64 ]]; then arch=aarch64; else arch=amd64; fi \
             && zip -FF graalvm-ee-java19-22.3.1-${arch}.zip --out graalvm-ee-java19-22.3.1-${arch}-full.zip \
             && unzip -o graalvm-ee-java19-22.3.1-${arch}-full.zip \
-            && rm -f graalvm-ee-java19-22.3.1-* \
+            && rm -f graalvm-ee-java19-22.3.1-*
+            
+            
+FROM        oraclelinux:9-slim as main
+
+COPY        --from=build /usr/lib/jvm/graalvm-ee-java19-22.3.1 /usr/lib/jvm/graalvm-ee-java19-22.3.1
+
+RUN         microdnf install -y iproute \
+            && microdnf clean all \
+            && adduser --home-dir /home/container container \
             && chown -R container /usr/lib/jvm/graalvm-ee-java19-22.3.1/* \
             && chmod -R 077 /usr/lib/jvm/graalvm-ee-java19-22.3.1/*
-
 
 ENV         PATH=/usr/lib/jvm/graalvm-ee-java19-22.3.1/bin:$PATH
 ENV         JAVA_HOME=/usr/lib/jvm/graalvm-ee-java19-22.3.1

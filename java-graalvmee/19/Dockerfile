@@ -12,7 +12,8 @@ RUN         microdnf install -y zip unzip \
             && if [[ $(uname -m) = aarch64 ]]; then arch=aarch64; else arch=amd64; fi \
             && zip -FF graalvm-ee-java19-22.3.1-${arch}.zip --out graalvm-ee-java19-22.3.1-${arch}-full.zip \
             && unzip -o graalvm-ee-java19-22.3.1-${arch}-full.zip \
-            && rm -f graalvm-ee-java19-22.3.1-*
+            && rm -f graalvm-ee-java19-22.3.1-* \
+            && chmod -R 005 /usr/lib/jvm/graalvm-ee-java19-22.3.1/*
             
             
 FROM        oraclelinux:9-slim as main
@@ -21,9 +22,7 @@ COPY        --from=build /usr/lib/jvm/graalvm-ee-java19-22.3.1 /usr/lib/jvm/graa
 
 RUN         microdnf install -y iproute \
             && microdnf clean all \
-            && adduser --home-dir /home/container container \
-            && chown -R container /usr/lib/jvm/graalvm-ee-java19-22.3.1/* \
-            && chmod -R 077 /usr/lib/jvm/graalvm-ee-java19-22.3.1/*
+            && adduser --home-dir /home/container container
 
 ENV         PATH=/usr/lib/jvm/graalvm-ee-java19-22.3.1/bin:$PATH
 ENV         JAVA_HOME=/usr/lib/jvm/graalvm-ee-java19-22.3.1

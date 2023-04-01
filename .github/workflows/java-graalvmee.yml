@@ -16,6 +16,7 @@ jobs:
         tag:
           - 19
           - 17
+          - 11
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

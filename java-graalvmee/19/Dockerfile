@@ -7,7 +7,7 @@ LABEL       org.opencontainers.image.licenses="MIT"
 COPY        ./graalvmee19 /usr/lib/jvm
 
 RUN         microdnf update -y \
-            && microdnf install -y curl ca-certificates openssl git tar iproute zip unzip \
+            && microdnf install -y curl ca-certificates openssl tar iproute zip unzip wget \
             && microdnf clean all \
             && adduser --home-dir /home/container container \
             && cd /usr/lib/jvm \

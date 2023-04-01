@@ -3,7 +3,6 @@ cd /home/container || (exit 1 && echo "Unable to change to /home/container. Some
 
 # Configure colors
 CYAN='\033[0;36m'
-YELLOW='\033[33m'
 BLUE='\033[0;34m'
 RESET_COLOR='\033[0m'
 
@@ -13,29 +12,6 @@ java -version
 # Set environment variable that holds the Internal Docker IP
 INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
 export INTERNAL_IP
-
-echo -e "
-${YELLOW}
-   _____                 ___      ____  __             
-  / ____|               | \ \    / /  \/  |            
- | |  __ _ __ __ _  __ _| |\ \  / /| \  / |            
- | | |_ | '__/ _\` |/ _\` | | \ \/ / | |\/| |            
- | |__| | | | (_| | (_| | |  \  /  | |  | |            
-  \_____|_|  \__,_|\__,_|_|   \/   |_|  |_|            
-                    ____                               
-                   |  _ \                              
-                   | |_) |_   _                        
-                   |  _ <| | | |                       
-                   | |_) | |_| |                       
-                   |____/ \__, |                       
-  _           __           __/ |     _                 
- | |         / _|         |___/     | |                
- | |     ___| |_ _ __ __ _ _   _  __| | ___ _   _ _ __ 
- | |    / _ \  _| '__/ _\` | | | |/ _\` |/ _ \ | | | '__|
- | |___|  __/ | | | | (_| | |_| | (_| |  __/ |_| | |   
- |______\___|_| |_|  \__,_|\__,_|\__,_|\___|\__,_|_|   
-${RESET_COLOR}
-"
 
 echo -e "JAVA 19 GraalVM Enterprise Edition
 By Lefraudeur: ${BLUE}https://github.com/Lefraudeur/ptero_images${RESET_COLOR}"

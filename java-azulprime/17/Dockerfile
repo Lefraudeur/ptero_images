@@ -6,12 +6,12 @@ LABEL       org.opencontainers.image.licenses="MIT"
 
 COPY        ./azulprime17 /usr/lib/jvm
 
-RUN         microdnf install -y zip unzip \
+RUN         microdnf install -y epel-release \
+            && microdnf install -y p7zip p7zip-plugins \
             && microdnf clean all \
             && cd /usr/lib/jvm \
             && if [[ $(uname -m) = aarch64 ]]; then arch=aarch64; else arch=amd64; fi \
-            && zip -FF zing23.03.0.0-3-jdk17.0.6-linux-${arch}.zip --out zing23.03.0.0-3-jdk17.0.6-linux-${arch}-full.zip \
-            && unzip -o zing23.03.0.0-3-jdk17.0.6-linux-${arch}-full.zip \
+            && 7z -x zing23.03.0.0-3-jdk17.0.6-linux-${arch}.zip \
             && rm -f zing23.03.0.0-3-jdk17.0.6-linux-* \
             && chmod -R 775 /usr/lib/jvm/zing23.03.0.0-3-jdk17.0.6-linux/*
             

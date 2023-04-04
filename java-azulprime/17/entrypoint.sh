@@ -13,7 +13,7 @@ java -version
 INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
 export INTERNAL_IP
 
-echo -e "JAVA 17 GraalVM Enterprise Edition
+echo -e "JAVA 17 Azul Platform Prime
 By Lefraudeur: ${BLUE}https://github.com/Lefraudeur/ptero_images${RESET_COLOR}"
 # Replace Startup Variables
 # shellcheck disable=SC2086

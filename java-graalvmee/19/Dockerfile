@@ -6,12 +6,12 @@ LABEL       org.opencontainers.image.licenses="MIT"
 
 COPY        ./graalvmee19 /usr/lib/jvm
 
-RUN         microdnf install -y zip unzip \
+RUN         microdnf install -y epel-release \
+            && microdnf install -y p7zip p7zip-plugins \
             && microdnf clean all \
             && cd /usr/lib/jvm \
             && if [[ $(uname -m) = aarch64 ]]; then arch=aarch64; else arch=amd64; fi \
-            && zip -FF graalvm-ee-java19-22.3.1-${arch}.zip --out graalvm-ee-java19-22.3.1-${arch}-full.zip \
-            && unzip -o graalvm-ee-java19-22.3.1-${arch}-full.zip \
+            && 7z x graalvm-ee-java19-22.3.1-${arch}.zip \
             && rm -f graalvm-ee-java19-22.3.1-* \
             && chmod -R 775 /usr/lib/jvm/graalvm-ee-java19-22.3.1/*
             

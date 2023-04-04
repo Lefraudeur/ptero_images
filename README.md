@@ -16,11 +16,5 @@
 - Docker Hub: `lefraudeur/ptero_images:java11_graalvmee`
 - Docker Hub ipv6: `registry.ipv6.docker.com/lefraudeur/ptero_images:java11_graalvmee`
 
-
-## AZUL PLATFORM PRIME JAVA 17 :
-- AMD64/ARM64: `ghcr.io/lefraudeur/ptero_images:java17_azulprime`
-- Docker Hub: `lefraudeur/ptero_images:java17_azulprime`
-- Docker Hub ipv6: `registry.ipv6.docker.com/lefraudeur/ptero_images:java17_azulprime`
-
 ###### Optimization: https://github.com/Lefraudeur/Minecraft-Performance-Flags-Benchmarks
 ###### Warning: This is the first release and there may be some bugs

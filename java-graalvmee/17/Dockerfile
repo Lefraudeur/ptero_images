@@ -8,6 +8,7 @@ COPY        ./graalvmee17 /usr/lib/jvm
 
 RUN         microdnf install -y epel-release \
             && microdnf install -y p7zip p7zip-plugins \
+            && microdnf clean all \
             && cd /usr/lib/jvm \
             && if [[ $(uname -m) = aarch64 ]]; then arch=aarch64; else arch=amd64; fi \
             && 7z x graalvm-ee-java17-22.3.1-${arch}.zip \

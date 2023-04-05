@@ -23,7 +23,7 @@
 - Note: If you want to use JAVA 17 for minecraft paper server, you may have to add -DPaper.IgnoreJavaVersion=true before -jar in the startup command
 
 #### Info :
-Open an issue for feature requests or make a pull requests if you are familiar with docker
+Open an issue for feature requests or make a pull request if you are familiar with docker
 
 ###### Optimization: https://github.com/Lefraudeur/Minecraft-Performance-Flags-Benchmarks
 ###### Warning: This is the first release and there may be some bugs

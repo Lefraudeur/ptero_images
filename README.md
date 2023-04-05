@@ -3,13 +3,11 @@
 - AMD64/ARM64: `ghcr.io/lefraudeur/ptero_images:java19_graalvmee`
 - Docker Hub: `lefraudeur/ptero_images:java19_graalvmee`
 - Docker Hub ipv6: `registry.ipv6.docker.com/lefraudeur/ptero_images:java19_graalvmee`
-- Note: If you want to use JAVA 19 for minecraft paper server, you may have to add -DPaper.IgnoreJavaVersion=true before -jar in the startup command
 
 ## GRAAL VM ENTERPRISE EDITION JAVA 17 :
 - AMD64/ARM64: `ghcr.io/lefraudeur/ptero_images:java17_graalvmee`
 - Docker Hub: `lefraudeur/ptero_images:java17_graalvmee`
 - Docker Hub ipv6: `registry.ipv6.docker.com/lefraudeur/ptero_images:java17_graalvmee`
-- Note: If you want to use JAVA 17 for minecraft paper server, you may have to add -DPaper.IgnoreJavaVersion=true before -jar in the startup command
 
 ## GRAAL VM ENTERPRISE EDITION JAVA 11 :
 - AMD64/ARM64: `ghcr.io/lefraudeur/ptero_images:java11_graalvmee`
@@ -20,7 +18,11 @@
 - AMD64/ARM64: `ghcr.io/lefraudeur/ptero_images:java17_azulprime`
 - Docker Hub: `lefraudeur/ptero_images:java17_azulprime`
 - Docker Hub ipv6: `registry.ipv6.docker.com/lefraudeur/ptero_images:java17_azulprime`
-- Note: If you want to use JAVA 17 for minecraft paper server, you may have to add -DPaper.IgnoreJavaVersion=true before -jar in the startup command
+
+## AZUL PLATFORM PRIME JAVA 8 :
+- AMD64/ARM64: `ghcr.io/lefraudeur/ptero_images:java8_azulprime`
+- Docker Hub: `lefraudeur/ptero_images:java8_azulprime`
+- Docker Hub ipv6: `registry.ipv6.docker.com/lefraudeur/ptero_images:java8_azulprime`
 
 #### Info :
 Open an issue for feature requests or make a pull request if you are familiar with docker

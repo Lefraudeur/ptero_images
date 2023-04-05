@@ -4,7 +4,7 @@ LABEL       author="Lefraudeur" maintainer="karlbouisseren@gmail.com"
 LABEL       org.opencontainers.image.source="https://github.com/Lefraudeur/ptero_images"
 LABEL       org.opencontainers.image.licenses="MIT"
 
-COPY        ./azulprime17 /usr/lib/jvm
+COPY        ./azulprime8 /usr/lib/jvm
 
 RUN         microdnf install -y epel-release \
             && microdnf install -y p7zip p7zip-plugins \

@@ -20,7 +20,8 @@ FROM        oraclelinux:9-slim as main
 
 COPY        --from=build /usr/lib/jvm/zing23.03.0.0-3-jdk17.0.6-linux /usr/lib/jvm/zing23.03.0.0-3-jdk17.0.6-linux
 
-RUN         microdnf install -y iproute \
+RUN         microdnf update -y \
+            && microdnf install -y iproute \
             && microdnf clean all \
             && adduser --home-dir /home/container container
 

@@ -2,6 +2,8 @@ name: build java_graalvm
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 0 1 * *"
 
 permissions:
   actions: read

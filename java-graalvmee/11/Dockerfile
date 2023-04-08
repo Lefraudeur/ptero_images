@@ -20,7 +20,8 @@ FROM        oraclelinux:9-slim as main
 
 COPY        --from=build /usr/lib/jvm/graalvm-ee-java11-22.3.1 /usr/lib/jvm/graalvm-ee-java11-22.3.1
 
-RUN         microdnf install -y iproute \
+RUN         microdnf update -y \
+            && microdnf install -y iproute \
             && microdnf clean all \
             && adduser --home-dir /home/container container
 

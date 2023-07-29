@@ -1,9 +1,5 @@
 FROM        oraclelinux:9-slim as build
 
-LABEL       author="Lefraudeur" maintainer="karlbouisseren@gmail.com"
-LABEL       org.opencontainers.image.source="https://github.com/Lefraudeur/ptero_images"
-LABEL       org.opencontainers.image.licenses="MIT"
-
 COPY        ./azulprime17 /usr/lib/jvm
 
 RUN         microdnf install -y epel-release \

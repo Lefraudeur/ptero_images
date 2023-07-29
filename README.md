@@ -2,7 +2,7 @@
 
 Some java docker images for pterodactyl panel:
 https://pterodactyl.io/.
-Made mainly for java mincraft, these docker images can highly improve performance over basic oracle/openjdk images
+Made mainly for java mincraft, these java images can highly improve performance over basic oracle/openjdk images
 
 ## GRAAL VM ENTERPRISE EDITION JAVA 19 :
 - AMD64/ARM64: `ghcr.io/lefraudeur/ptero_images:java19_graalvmee`

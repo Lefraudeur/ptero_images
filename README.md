@@ -1,4 +1,4 @@
-# Pterodactyl Images
+# Java Docker Images For Pterodactyl
 
 Some java docker images for pterodactyl panel:
 https://pterodactyl.io/.

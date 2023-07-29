@@ -13,8 +13,6 @@ java -version
 INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
 export INTERNAL_IP
 
-echo -e "JAVA 19 GraalVM Enterprise Edition
-By Lefraudeur: ${BLUE}https://github.com/Lefraudeur/ptero_images${RESET_COLOR}"
 # Replace Startup Variables
 # shellcheck disable=SC2086
 MODIFIED_STARTUP=$(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')

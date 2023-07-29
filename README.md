@@ -25,4 +25,3 @@
 - Docker Hub ipv6: `registry.ipv6.docker.com/lefraudeur/ptero_images:java8_azulprime`
 
 ###### Optimization: https://github.com/Lefraudeur/Minecraft-Performance-Flags-Benchmarks
-###### Warning: This is the first release and there may be some bugs
